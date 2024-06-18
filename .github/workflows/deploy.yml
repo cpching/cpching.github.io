@@ -46,4 +46,4 @@ jobs:
           git config --global user.email "pching0811@gmail.com"
           git config --global user.name "cpching"
           npm ci
-          npm deploy
+          yarn deploy
