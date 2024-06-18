@@ -4,10 +4,16 @@
         <title>My Site Blog</title>
         <link>https://cpching.github.io/blog/blog</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[First Blog!]]></title>
+            <link>https://cpching.github.io/blog/blog/2024/06/18/first-post</link>
+            <guid>https://cpching.github.io/blog/blog/2024/06/18/first-post</guid>
+            <pubDate>Tue, 18 Jun 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://cpching.github.io/blog/blog/welcome</link>
