@@ -1,6 +1,6 @@
 # Neovim Configuration with Lua
 - This tutorial is written to help you configure Neovim using Lua
-- 在安裝完 Neovim 後進入 Neovim 預設的 config 檔案路徑
+- 在安裝完 Neovim 後進入 Neovim 預設的 config 檔案路徑進行設定
     - Linux、BSD、macOS 在 `~/.config/nvim/`
         ``` bash
         cd ~/.config/nvim/

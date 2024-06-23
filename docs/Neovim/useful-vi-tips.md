@@ -1,5 +1,6 @@
-Essential Vi tips without using any plugins
 # Useful Vi Tips
+Essential Vi tips without using any plugins
+## General
 - 如果覺得什麼事情很冗就去看 vi 能不能解決
 - [Text object](https://amikai.github.io/2020/09/22/vim-text-object/)
 - 熟悉 Vi 原生功能
