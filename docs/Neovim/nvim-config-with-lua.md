@@ -120,10 +120,9 @@ keymap("i", "jj", "<ESC>", opts)
 -- Function to close buffer or window
 function Close_buffer_or_window()
     vim.api.nvim_command('bn!')
-    local success = pcall( vim.api.nvim_command, 'bd#')
-    if not success then
-        -- Check if there is only one window left
-        -- if #vim.api.nvim_list_wins() == 1 then
+    local success = pcall(vim.api.nvim_command, 'bd#')
+    -- Check if there is only one window left
+    if not success or #vim.api.nvim_list_wins() == 1 then
         vim.api.nvim_command('q')
     end
 end

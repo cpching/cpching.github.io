@@ -46,6 +46,10 @@ const sidebars: SidebarsConfig = {
           label: "Plugins",
           collapsible: true,
           collapsed: true,
+          link: {
+            type: "generated-index",
+            description: "Recommended Plugins",
+          },
           items: ["Neovim/Plugins/nvim-tree"],
         },
       ],
