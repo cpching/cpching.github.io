@@ -1,16 +1,13 @@
----
-sidebar_position: 2
----
-
 # Docusaurus
 - 希望這個教學會讓人安心完成兩件事
     - 將 Docusaurus 發佈在 Github page 上
     - 利用 Github Action 進行自動部署
-- 所參考的 Docusaurus 版本是 3.4.0。
-    - 其實文件寫得滿仔細的但有些地方沒辦法馬上理解，也沒有找到其它參考，所以寫了這一篇
+- 所參考的 Docusaurus 版本是 `3.4.0`。
+    - 其實文件寫得滿仔細的但有些地方沒辦法馬上理解，所以寫了這一篇
 - 剛設定完，記憶猶新 (2024.06.19)
 
-## Docusaurus Introduction
+## Introduction
+- Docusaurus 幫助想要建置自己網站的使用者快速建置結構化文檔網站
 - Docusaurus 主要有三種模式的頁面，Pages、Docs、Blog
     - Pages: 常見的網頁，可以以 React.js 或是 markdown 撰寫
     - Docs: 以目次架構的形式呈現教學文件
@@ -68,10 +65,10 @@ sidebar_position: 2
     > Generate a new SSH key. Since this SSH key will be used in CI, make sure to not enter any passphrase.
 
     > By default, your public key should have been created in `~/.ssh/id_rsa.pub`; otherwise, use the name you've provided in the previous step to add your key to GitHub deploy keys.
-2. 將上一步生成的 public key 複製到 clipboard （可以利用 `pbcopy < <public_key_file_path>` 指令），到 GitHub repository > 分頁 Settings > 側邊欄 Deploy keys > 按鈕 Add deploy key，填入 Tile 並將所複製的 public key 填入 Key
+2. 將上一步生成的 public key 複製到 clipboard （可以利用 `pbcopy < <public_key_file_path>` 指令），到 GitHub repository > 分頁 `Settings` > 側邊欄 `Deploy keys` > 按鈕 `Add deploy key`，`Tile` 欄位填入想取的名字並將所複製的 public key 填入 `Key` 欄位
     ![GitHub Deploy Keys](./images/GitHub-Deploy-Keys.png)
     > Copy the key to clipboard with `pbcopy < ~/.ssh/id_rsa.pub` and paste it as a deploy key in the deployment repository. Copy the file content if the command line doesn't work for you. Check the box for Allow write access before saving your deployment key.
-3. 將第一步中生成的 private key 複製到 clipboard（private key 所在的路徑跟 pulic key 相同、檔案名只差在副檔名），到 GitHub repository > 分頁 Settings > 側邊欄 Secrets and variables 下的 Actions > 按鈕 New repository secret，Name 填入 `GH_PAGES_DEPLOY` 並將所複製的 private key 填入 Secret
+3. 將第一步中生成的 private key 複製到 clipboard（private key 所在的路徑跟 pulic key 相同、檔案名只差在副檔名），到 GitHub repository > 分頁 `Settings` > 側邊欄 `Secrets and variables` 下的 `Actions` > 按鈕 `New repository secret`，`Name` 欄位填入 `GH_PAGES_DEPLOY` 並將所複製的 private key 填入 `Secret` 欄位
     ![GitHub Secret](./images/GitHub-Secret.png)
     > You'll need your private key as a GitHub secret to allow Docusaurus to run the deployment for you.
 
@@ -132,5 +129,5 @@ sidebar_position: 2
               npm ci
               yarn deploy
     ```
-5. 接著試著 push 到 GitHub repository 中的 main branch 進行測試，順利的話就會在 Action 分頁下看到一個新的 workflow
+5. 試著 push 到 GitHub repository 中的 `main` branch 進行測試，順利的話就會在 Action 分頁下看到一個新的 workflow
 
