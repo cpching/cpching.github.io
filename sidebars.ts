@@ -32,25 +32,53 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "Neovim/nvim-config-with-lua",
           label: "Neovim Configuration with Lua",
+          id: "Neovim/nvim-config-with-lua",
         },
-        { type: "doc", id: "Neovim/useful-vi-tips", label: "Useful Vi Tips" },
+        { type: "doc", label: "Useful Vi Tips", id: "Neovim/useful-vi-tips" },
+        { type: "doc", label: "Text Objects in Vi", id: "Neovim/text-objects" },
         {
           type: "doc",
-          id: "Neovim/plugin-manager-lazy",
           label: "Plugin Manager - Lazy",
+          id: "Neovim/plugin-manager-lazy",
         },
         {
           type: "category",
-          label: "Plugins",
+          label: "Plugin Configurations",
           collapsible: true,
           collapsed: true,
           link: {
             type: "generated-index",
-            description: "Recommended Plugins",
+            // description: "Recommended Plugins",
           },
-          items: ["Neovim/Plugins/nvim-tree"],
+          items: [
+            {
+              type: "doc",
+              label: "nvim-tree (A file explorer tree)",
+              id: "Neovim/Plugins/nvim-tree",
+            },
+            {
+              type: "doc",
+              label: "nvim-treesitter",
+              id: "Neovim/Plugins/nvim-treesitter",
+            },
+            {
+              type: "doc",
+              label: "LSP-Related Plugins",
+              id: "Neovim/Plugins/lsp",
+            },
+            {
+              type: "doc",
+              label: "linting",
+              id: "Neovim/Plugins/linting",
+            },
+            {
+              type: "doc",
+              label: "snippets",
+              id: "Neovim/Plugins/snippets",
+            },
+            // { type: "doc", label: "" , id: "Neovim/Plugins/" },
+          ],
         },
       ],
     },
