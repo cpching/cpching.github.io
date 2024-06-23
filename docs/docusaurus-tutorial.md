@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Docusaurus Tutorial
+# Docusaurus
 - 希望這個教學會讓人安心完成兩件事
     - 將 Docusaurus 發佈在 Github page 上
     - 利用 Github Action 進行自動部署
@@ -33,12 +33,12 @@ sidebar_position: 1
     ```
     $ npm run start
     ```
-- 運行成功可以在 `http://localhost:<Port>/` (\<Port\> 預設為 `3000`) 看到頁面
+- 運行成功可以在 `http://localhost:<Port>/` (`<Port>` 預設為 `3000`) 看到頁面
 
 ### [Deploying to GitHub Pages](https://docusaurus.io/docs/deployment#deploying-to-github-pages)
 - 先到 GitHub 上建立一個專案， 專案的命名會影響到 GitHub page 的網址，有兩種命名方式
     - 以 GitHub 帳號名加上 `.github.io` (`<username>.github.io`)
-        - GitHub page 的網址為 `https://\<username>.github.io/`
+        - GitHub page 的網址為 `https://<username>.github.io/`
     - 其它符合 GitHub repository 命名原則 (`<project-name>`)
         - GitHub page 的網址為 `https://<username>.github.io/<project-name>`
 - 到本地的 Docusaurus 資料夾下修改 `docusaurus.config.js` 檔案中 `Config` 下的幾個 key 的 value
@@ -49,7 +49,7 @@ sidebar_position: 1
     - `organizationName`：設定為 `<username>`
     - `projectName`：設定為專案名
 - 設定 Git 相關環境變數，設定完後執行 `yarn deploy`，相關環境變數可以參考 https://docusaurus.io/docs/deployment#environment-settings
-    - 如果有設定過 GitHub 上的 SSH key 可以只設定 `USE_SSH=true` 然後執行
+    - 如果有設定過 GitHub 上的 SSH key 可以只設定 `USE_SSH=true` 然後執行 `yarn deploy`
     - 可以去 GitHub repository 頁面上查看 deploy 的狀況
     ![GitHub Deployments](./images/GitHub-Deployments.png)
 - 如果 deploy 成功就可以到 `<url><baseUrl>` 查看
