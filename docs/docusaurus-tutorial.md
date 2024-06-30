@@ -45,6 +45,7 @@
         - 如果專案名為 `<project-name>`，設定為 `/<project-name>/`
     - `organizationName`：設定為 `<username>`
     - `projectName`：設定為專案名
+    - `deploymentBranch`：gh-pages
 - 設定 Git 相關環境變數，設定完後執行 `yarn deploy`，相關環境變數可以參考 https://docusaurus.io/docs/deployment#environment-settings
     - 如果有設定過 GitHub 上的 SSH key 可以只設定 `USE_SSH=true` 然後執行 `yarn deploy`
     - 可以去 GitHub repository 頁面上查看 deploy 的狀況

@@ -54,6 +54,11 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: "doc",
+              label: "LSP-Related Plugins",
+              id: "Neovim/Plugins/lsp",
+            },
+            {
+              type: "doc",
               label: "nvim-tree (A file explorer tree)",
               id: "Neovim/Plugins/nvim-tree",
             },
@@ -61,11 +66,6 @@ const sidebars: SidebarsConfig = {
               type: "doc",
               label: "nvim-treesitter",
               id: "Neovim/Plugins/nvim-treesitter",
-            },
-            {
-              type: "doc",
-              label: "LSP-Related Plugins",
-              id: "Neovim/Plugins/lsp",
             },
             {
               type: "doc",
