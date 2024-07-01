@@ -1,5 +1,10 @@
 # Neovim Configuration with Lua
-- This tutorial is written to help you configure Neovim using Lua
+This tutorial is written to help you configure Neovim using Lua
+## Why Lua
+- Neovim has an embedded lua runtime 
+- [More reasons](https://teukka.tech/luanvim.html) 
+
+## Begining
 - 在安裝完 Neovim 後進入 Neovim 預設的 config 檔案路徑進行設定
     - Linux、BSD、macOS 在 `~/.config/nvim/`
         ``` bash
@@ -9,15 +14,13 @@
         ``` psh
         cd ~/AppData/Local/nvim/
         ```
-- 如果看完這一篇 Neovim Configuration with Lua 可以獲得利用 Lua 設定 key mappings 跟 options 的能力
-- 如果看完整個 Neovim tutorial 包含 plugins 設定完會長得像這張圖。（最下面那一行是 tmux status bar）
+- 後面所有的設定都是發生在這個檔案路徑底下
+- 如果看完這一篇 `Neovim Configuration with Lua` 可以獲得利用 Lua 設定 key mappings 跟 options 的能力
+- 如果看完整個 Neovim tutorial 包含 plugins 設定可以獲得長得像這張圖。（最下面那一行是 tmux status bar）
     ![Neovim](./images/nvim.png)
 
 ## Directory Structure
-使用 Lua 設定 Neovim 時，為了要正確載入 config 檔案，目錄結構會長得像下面的範例
--  `init.lua` 或 `init.vim` 在 config 檔案路徑下，這個 `init` 檔案是設定檔的載入點
-    - Neovim 支援在 `init.lua` 或 `init.vim` 使用 Lua 或 Vimscript
--  `lua/` 資料夾放置 Lua modules
+使用 Lua 設定 Neovim 時，要可以正確載入 config 檔案，目錄結構會長得像下面的範例
 ``` bash
 ~/.config/nvim # [ or ~/AppData/Local/nvim ]
 |-- init.lua # [or init.vim (https://neovim.io/doc/user/lua-guide.html#lua-guide-config)]
@@ -29,6 +32,9 @@
         |-- plugin_a.lua
         |-- plugin_b.lua
 ```
+-  `init.lua` 或 `init.vim` 在 config 檔案路徑下，這個 `init` 檔案是設定檔的載入點
+    - Neovim 支援在 `init.lua` 或 `init.vim` 使用 Lua 或 Vimscript
+-  `lua/` 資料夾下放置 Lua modules
 ## Code in `init.lua` or `init.vim`
 在 `init.lua` 或 `init.vim` 中利用 `require("<lua_module>")` 載入 `lua/` 下的 Lua modules。
  在下面範例中 `options`、`keymaps`、`plugin-manager`、`settings` 都是 `lua/` 下後綴為 `.lua` 的 Lua 檔案
@@ -49,7 +55,7 @@ vim.cmd('colorscheme ' .. settings.colorscheme)
 ```
 
 ## [Lua Modules](https://neovim.io/doc/user/lua-guide.html#lua-guide-modules)
-- 如同前面提到 Lua modules 是會藉由 `require("<lua_module>")` 載入 Neovim
+- 如同前面提到 Neovim 會透過 `require("<lua_module>")` 載入 Lua modules 
     > Lua modules are found inside a `lua/` folder in your `'runtimepath'` (for most users, this will mean `~/.config/nvim/lua` on *NIX systems and `~/AppData/Local/nvim/lua` on Windows). You can `require()` files in this folder as Lua modules.
 
     > Place Lua files in the `lua/` directory in `‘runtimepath’` and load them with require

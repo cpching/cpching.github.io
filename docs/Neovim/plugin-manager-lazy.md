@@ -48,5 +48,6 @@
     ```
 - 如果沒有需要特別設定 plugin 就只需要新增上面的那段 code 到 `lua/plugins/` 的隨便一個（名字可以自己取）檔案下，接著存檔退出再次進入 Neovim 後 `:Lazy` 進入 Lazy 畫面，按下大寫 `I` 就可以安裝該 plugin
 
-
+## configuration of Plugins
+- 
 
