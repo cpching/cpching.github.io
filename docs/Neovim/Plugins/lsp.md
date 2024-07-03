@@ -1,4 +1,4 @@
-# LSP-Related Plugins
+# LSP
 LSP 的全名為 Language Server Protocol，如名所述，它定義了 Language Clients 與 Language Servers 對接的方法。Language Servers 提供了即時的語法分析，當安裝了某個語言的 Language Server 後不同的 Language Clients （如 Neovim、VSCode 等編輯器）就可以與該 Language Server 溝通，呈現編輯時的語法檢查、程式碼補齊等功能。Neovim 中有許多與 LSP 相關的 Plugins 可以幫助使用者管理 LSP Servers 與設定 LSP Clients。
 
 ## LSP Servers Management

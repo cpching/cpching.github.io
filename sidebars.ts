@@ -54,30 +54,40 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: "doc",
-              label: "LSP-Related Plugins",
+              label: "Treesitter",
+              id: "Neovim/Plugins/treesitter",
+            },
+            {
+              type: "doc",
+              label: "File Explorer Tree",
+              id: "Neovim/Plugins/file-exploer-tree",
+            },
+            {
+              type: "doc",
+              label: "Package Manager",
+              id: "Neovim/Plugins/package-manager",
+            },
+            {
+              type: "doc",
+              label: "LSP",
               id: "Neovim/Plugins/lsp",
             },
             {
               type: "doc",
-              label: "nvim-tree (A file explorer tree)",
-              id: "Neovim/Plugins/nvim-tree",
-            },
-            {
-              type: "doc",
-              label: "nvim-treesitter",
-              id: "Neovim/Plugins/nvim-treesitter",
-            },
-            {
-              type: "doc",
-              label: "linting",
+              label: "Linting",
               id: "Neovim/Plugins/linting",
             },
             {
               type: "doc",
-              label: "snippets",
-              id: "Neovim/Plugins/snippets",
+              label: "Formatting",
+              id: "Neovim/Plugins/formatting",
             },
-            // { type: "doc", label: "" , id: "Neovim/Plugins/" },
+            {
+              type: "doc",
+              label: "Autocomplete",
+              id: "Neovim/Plugins/autocomplete",
+            },
+            // { type: "doc", label: "", id: "Neovim/Plugins/" },
           ],
         },
       ],
