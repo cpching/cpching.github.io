@@ -5,7 +5,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "My Site",
   tagline: "The road is made by walking",
-  favicon: "img/favicon.ico",
+  // favicon: "img/favicon.ico",
+  favicon: "img/logo.svg",
 
   // Set the production url of your site here
   url: "https://cpching.github.io",
