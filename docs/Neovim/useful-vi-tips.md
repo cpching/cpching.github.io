@@ -5,10 +5,11 @@ sidebar_position: 1
 
 # Useful Vi Tips
 Essential Vi tips without using any plugins
+
 ## General
 - 如果覺得什麼事情很冗就去看 vi 能不能解決
-- [Text object](https://amikai.github.io/2020/09/22/vim-text-object/)
 - 熟悉 Vi 原生功能
+- 幫助快速移動的 [Motions](./basic-ways-to-change-text-in-vi#motions) 
 - 搜尋時加入 `\c` 字元可以忽略後面字串的大小寫
 - `V` （大寫）可以進入 VISUAL LINE mode
 - `Control+V` 可以進入 VISUAL BLOCK mode
@@ -45,6 +46,9 @@ Essential Vi tips without using any plugins
     - 將 cursor line 所在的這行在畫面中垂直置中
 - `>>`/`<<`
     - 調整 indent
+- `~`
+    - 交換大小寫
+    - 本來是大寫的變成小寫、本來是小寫的變成大寫
 ## In INSERT Mode
 - Control+o
     - 暫時進入 NORMAL mode
