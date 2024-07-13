@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Neovim Configuration with Lua
 This tutorial is written to help you configure Neovim using Lua
 ## Why Lua
@@ -71,7 +75,7 @@ vim.cmd('colorscheme ' .. settings.colorscheme)
         require('plugins.plugin_a')
         ```
     - Load `plugins/init.lua` (inside the `lua/` folder)
-        ``` lua
+        ```lua
         require('plugins')
         ```
 

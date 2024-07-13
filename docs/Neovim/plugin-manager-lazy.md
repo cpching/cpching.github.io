@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Plugin Manager - Lazy
 安裝 plugins 讓人們的 Neovim 使用更加方便，而 plugin manager 是用來管理 plugins 的安裝、加載和設定。
 這個 tutorial 是使用 Lazy 作為 Neovim 的 Plugin Manager。

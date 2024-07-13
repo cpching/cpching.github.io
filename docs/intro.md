@@ -8,8 +8,8 @@ sidebar_position: 1
 - [Docusaurus](./docusaurus-tutorial.md) ✓
 - [Neovim](/docs/category/neovim) ◌
   - [Useful Vi Tips](./Neovim/useful-vi-tips.md) ✓
-  - [Neovim Configuration with Lua](./Neovim/nvim-config-with-lua.md) ◌
   - [Text Objects in Vi](./Neovim/text-objects.md) ✗
+  - [Neovim Configuration with Lua](./Neovim/nvim-config-with-lua.md) ◌
   - [Plugin Manager - Lazy](./Neovim/plugin-manager-lazy.md) ◌
   - [Plugin Configuration](/docs/category/plugin-configurations) ◌
     -  [Treesitter](./Neovim/Plugins/treesitter.md) ✗

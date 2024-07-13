@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Docusaurus
 - 希望這個教學會讓人安心完成兩件事
     - 將 Docusaurus 發佈在 Github page 上

@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+---
+
+
 # Useful Vi Tips
 Essential Vi tips without using any plugins
 ## General
@@ -8,7 +13,7 @@ Essential Vi tips without using any plugins
 - `V` （大寫）可以進入 VISUAL LINE mode
 - `Control+V` 可以進入 VISUAL BLOCK mode
 ## In VISUAL BLOCK Mode
-- **選擇多行後可以利用`I`（大寫）一次插入相同內容到多行中**（也可以利用其它字元進行其它操作）
+- 選擇多行後可以利用`I`（大寫）一次插入相同內容到多行中（也可以利用其它字元進行其它操作）
 ## In VISUAL * Mode
 - `"*y` 
     - 複製所選的文字進 clipboard
@@ -30,8 +35,8 @@ Essential Vi tips without using any plugins
 - `J`（大寫）
     - 把目前這行尾巴 `\n` 變成空格
 - `S`（大寫）或 `cc`
-    - 會把目前這行清空進入 INSERT mode 並在合適的 indentation level
-    - 有時候在 NORMAL mode 按 `o` 後直接離開 INSERT mode 會失去indentation level，`S`（大寫）或 `cc`可以在該 indentation level 下編輯
+    - 會把目前這行清空並在合適的 indentation level 進入 INSERT mode 
+    - 在 NORMAL mode 按 `o` 後直接離開 INSERT mode 會失去indentation level，`S`（大寫）或 `cc`可以在該 indentation level 下編輯
 - 大括號 `{` 和 `}`
     - 跳到下一個空行
 - 在 pair (e.g. (), {}, "") 的一端按下 `%`
