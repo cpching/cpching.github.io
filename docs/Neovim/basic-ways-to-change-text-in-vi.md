@@ -3,16 +3,16 @@ sidebar_position: 2
 ---
 
 # Basic Ways to Change Text in Vi
-有三種在不進入 INSERT mode 的情況下編輯文件的方式
-- Operators and Motions: 在這一節中會說明如何利用 operators 搭配 motions 編輯文件以及有什麼樣的 operators 和 motion
-- VISUAL Mode: 在這一節中會說明不同的 VISUAL mode
-- Text Objects：Text objects 為 text group，在這節中會說明有什麼樣的 text objects 還有可以對它們進行什麼樣的操作
+有三種在不進入 INSERT mode 的情況下編輯文件的方式，掌握這些方法可以快速地利用 Vi 編輯文件，在下面的 tutorial 中會分別介紹
+- Operators and Motions: 介紹如何利用 operators 搭配 motions 編輯文件以及有什麼樣的 operators 和 motion
+- VISUAL Mode: 介紹不同的 VISUAL mode 和進入方式
+- Text Objects：介紹什麼是 text objects 和有什麼樣的 text objects 還有可以對它們進行什麼樣的操作
 
 ## Operators and Motions
-Combo 為 `{Operator}{Count}{Motion}`
-- `{Operators}` 是要做的操作
+使用組合 為 `{Operator}{Count}{Motion}`
+- `{Operator}` 是要做的操作
 - `{Count}` 是要幾次 motions
-- `{Motions}` 是想把 cursor 帶到哪裡（motions 本身就是用來移動 cursor 的 command，沒有在前面加上 operators 的話就是單純移動 cursor）
+- `{Motion}` 是想把 cursor 帶到哪裡（motions 本身就是用來移動 cursor 的 command，沒有在前面加上 operators 的話就是單純移動 cursor）
 
 Operator-motion 組合起來是要對目前 cursor 所在的地方到欲到達的地方間的 text 進行什麼操作。非常繞口，舉個例子 `d2w`，`d` 是 `delete`、`2w` 是 `move two words`，所以合在一起是 `delete two words`。
 
@@ -61,16 +61,16 @@ Motions 有 left-right motions、up-down motions、word motions 和 text object 
 
 
 ## VISUAL Mode
-如果有更複雜的 motion 需要操作可以選擇進入 VISUAL mode，在 NORMAL mode 下
-- `v` 進入 charwise Visual mode
-- `V` 進入 linewise Visual mode
-- `CTRL-v` 進入 blockwise visual mode
+如果有更複雜的 motion 需要操作可以選擇進入 VISUAL mode，在 NORMAL mode 下按下
+- `v` 進入 charwise VISUAL mode 會以 characters 為單位進行選取
+- `V` 進入 linewise VISUAL mode 會以 lines 為單位進行選取
+- `CTRL-v` 進入 blockwise visual mode 會以 rectangle 的形式選取
 接著就可以利用 `{count}` 和 `{operator}` 的組合進行操作
 
 
 ## Text Objects
 如果想在 Vi 中快速地編輯文件，理解 text objects 是一件重要的事。 
-Text objects 是把 text group 起來的概念，可以利用 operators 直接對 text objects 進行操作或是進入 Visual mode 把 text objects 選起來操作。
+Text objects 是把 text group 起來的概念，可以利用 operators 直接對 text objects 進行操作或是進入 VISUAL mode 把 text objects 選起來操作。
 1. 開頭會是 
     - `i`: 代表 inner
     - `a`: 代表 a 一個
@@ -89,10 +89,10 @@ Text objects 是把 text group 起來的概念，可以利用 operators 直接�
 - Examples:
     - `aw`: a word, leading or trailing white space is included, but not counted.
     - `iw`: a word, leading or trailing white space is not included. Wite space between words is counted
+- 要利用 operator 的話跟 operator-motion 很像是把 operator 放在前面、text object 放在後面、中間可以放 count
 
 
 ## Reference
-
 - [Neovim document - Making small changes](https://neovim.io/doc/user/usr_04.html) 
 - [Neovim document - Motions](https://neovim.io/doc/user/motion.html) 
 
