@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://cpching.github.io/zh-Hans/blog</id>
     <title>My Site Blog</title>
-    <updated>2024-06-18T00:00:00.000Z</updated>
+    <updated>2024-07-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://cpching.github.io/zh-Hans/blog"/>
     <subtitle>My Site Blog</subtitle>
-    <icon>https://cpching.github.io/zh-Hans/img/favicon.ico</icon>
+    <icon>https://cpching.github.io/zh-Hans/img/logo.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[令人愉快的面試邀約]]></title>
+        <id>https://cpching.github.io/zh-Hans/blog/2024/07/04/interview-invitation</id>
+        <link href="https://cpching.github.io/zh-Hans/blog/2024/07/04/interview-invitation"/>
+        <updated>2024-07-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[在丟了一些履歷沒收到回覆時有些萎靡，今天收到兩份面試邀約，十分愉快。知道不是自己不好，是時機跟機緣。就算都沒收到我希望我記得還是會有人愛我、相信我，繼續加油。]]></summary>
+        <content type="html"><![CDATA[<p>在丟了一些履歷沒收到回覆時有些萎靡，今天收到兩份面試邀約，十分愉快。知道不是自己不好，是時機跟機緣。就算都沒收到我希望我記得還是會有人愛我、相信我，繼續加油。</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[First Blog Post]]></title>
         <id>https://cpching.github.io/zh-Hans/blog/first-blog-post</id>
