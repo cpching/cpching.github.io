@@ -11,7 +11,7 @@ sidebar_position: 1
   - [Basic Ways to Change Text in Vi](./Neovim/basic-ways-to-change-text-in-vi) ✓
   - [Neovim Configuration with Lua](./Neovim/nvim-config-with-lua.md) ◌
   - [Plugin Manager - Lazy](./Neovim/plugin-manager-lazy.md) ◌
-  - [Plugin Configuration](/docs/category/plugin-configurations) ◌
+  - Plugin Configuration ◌
     - [Treesitter](./Neovim/Plugins/treesitter.md) ✗
     - [File Explorer Tree](./Neovim/Plugins/file-exploer-tree.md) ✗
     - [Package Manager](./Neovim/Plugins/package-manager.md) ✗
