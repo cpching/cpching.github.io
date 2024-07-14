@@ -37,7 +37,6 @@ const config: Config = {
       "classic",
       {
         docs: {
-          routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -84,6 +83,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ["powershell", "lua", "bash", "go"],
     },
   } satisfies Preset.ThemeConfig,
 };
