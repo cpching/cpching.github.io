@@ -4,8 +4,8 @@ sidebar_position: 2
 
 # Basic Ways to Change Text in Vi
 有三種在不進入 INSERT mode 的情況下編輯文件的方式，掌握這些方法可以快速地利用 Vi 編輯文件，在下面的 tutorial 中會分別介紹
-- Operators and Motions: 介紹如何利用 operators 搭配 motions 編輯文件以及有什麼樣的 operators 和 motion
-- VISUAL Mode: 介紹不同的 VISUAL mode 和進入方式
+- Operators and Motions：介紹如何利用 operators 搭配 motions 編輯文件以及有什麼樣的 operators 和 motions
+- VISUAL Mode：介紹不同的 VISUAL mode 和進入方式
 - Text Objects：介紹什麼是 text objects 和有什麼樣的 text objects 還有可以對它們進行什麼樣的操作
 
 ## Operators and Motions
@@ -24,7 +24,7 @@ Operator-motion 組合起來是要對目前 cursor 所在的地方到欲到達�
 - `g~`: Invert case
 
 ### Motions
-Motions 有 left-right motions、up-down motions、word motions 和 text object motions。如字面上的意思，它們分別是讓 cursor 在左右、上下、words 之間、text objects 之間移動
+Motions 是讓 cursor 改變位置的 command，有 left-right motions、up-down motions、word motions 和 text object motions 等不同類型的 motions。如字面上的意思，它們分別是讓 cursor 在左右、上下、words 之間、text objects 之間移動。在這裡分別舉幾種常用的 motions，其它的可以參考 [Motions - Neovim docs](https://neovim.io/doc/user/motion.html) 
 
 常用的 left-right motions 有
 - `f{char}`: 把 cursor 移動到目前 cursor 右邊的 `{char}` 上
@@ -39,12 +39,16 @@ Motions 有 left-right motions、up-down motions、word motions 和 text object 
 - `G`: 把cursor 移到整份文件的最後一行
 
 常用的 word motions 有
-- `w`: words forward
-- `W`: WORDS* forward
+- `w`: words  forward
+    - words: A sequence of letters, digits and underscores or a sequence of other non-blank characters, separated with white space
+- `W`: WORDS forward
+    - WORDS: A sequence of non-blank characters, separated with white space
 - `e`: Forward to the end of word
 - `E`: Forward to the end of WORD
 - `b`: words backward
 - `B`: WORDS backward
+
+*words vs. WORDS：letters、digits 和 underscores 與其它 non-blank characters 連續出現時，是同一個 WORD 但不是同一個 word，例如 `WO-RD` 當中包含三個 words (`WO`、`-`、`RD`)，且整個是一個 WORD
 
 常用的 text object motions 有
 - `(`: [sentences](https://neovim.io/doc/user/motion.html#sentence) backward 
@@ -55,9 +59,6 @@ Motions 有 left-right motions、up-down motions、word motions 和 text object 
 ### Note
 - Operator `d` 和 operator `c` 在絕大部分的情況下只差在完成動作後的 mode，除了 `c{count}w`，它跟 `c{count}e` 的行為一樣，最後一個 word 後如果有空格不會被刪除。
 - Operators 和 motions 之間可以加入 count
-- words vs. WORDS：letters、digits 和 underscores 與其它 non-blank characters 連續出現時，是同一個 WORD 但不是同一個 word，例如 `WO-RD` 當中包含三個 words (`WO`、`-`、`RD`)，且整個是一個 WORD
-    - words: A sequence of letters, digits and underscores or a sequence of other non-blank characters, separated with white space
-    - WORDS: A sequence of non-blank characters, separated with white space
 
 
 ## VISUAL Mode
@@ -65,16 +66,28 @@ Motions 有 left-right motions、up-down motions、word motions 和 text object 
 - `v` 進入 charwise VISUAL mode 會以 characters 為單位進行選取
 - `V` 進入 linewise VISUAL mode 會以 lines 為單位進行選取
 - `CTRL-v` 進入 blockwise visual mode 會以 rectangle 的形式選取
-接著就可以利用 `{count}` 和 `{operator}` 的組合進行操作
+
+接著就可以利用 `{Count}{Operator}` 的組合進行操作
 
 
 ## Text Objects
-如果想在 Vi 中快速地編輯文件，理解 text objects 是一件重要的事。 
-Text objects 是把 text group 起來的概念，可以利用 operators 直接對 text objects 進行操作或是進入 VISUAL mode 把 text objects 選起來操作。
-1. 開頭會是 
-    - `i`: 代表 inner
-    - `a`: 代表 a 一個
-2. 可以加入 `{count}` 代表要選擇幾個 objects
+如果想在 Vi 中快速地編輯文件，理解 text objects 是一件很有幫助的事。 
+Text objects 是把 text group 起來的概念，一次會選擇整組，當 cursor 在 text objects 間時十分好用，例如 cursor 在 `""` 之間時可以用 `i"` 或 `a"` 並加上 operator 變成 `di"` 或 `da"` 等進行操作。如下所示，`^` 指向 cursor 所在的位置。
+``` lua
+local settings = require("settings")
+                            ^
+-- after using `di"`
+local settings = require("")
+                          ^
+-- after using `da"`
+local settings = require()
+                         ^
+```
+可以利用 operators 直接對 text objects 進行操作或是進入 VISUAL mode 把 text objects 選起來操作。
+1. 要指定 text objects 的開頭會是 
+    - `i`: 代表 inner，像是 `i"` 代表 "inner quote block" 意即在 `""` 之間的 text
+    - `a`: 代表 a 一個，像是`i"` 代表 "a quote block" 意即 `""` 和在它們之間的 text
+2. 可以加入 `{count}` 代表要選擇幾個 text objects
 3. 搭配不同 character 代表不同 text objects
     - `w`: word
     - `W`: WORD
@@ -87,12 +100,12 @@ Text objects 是把 text group 起來的概念，可以利用 operators 直接�
     - `<` or `>`: \<\> block
     - `"` or `"` or <code>`</code>: quote block
 - Examples:
-    - `aw`: a word, leading or trailing white space is included, but not counted.
-    - `iw`: a word, leading or trailing white space is not included. Wite space between words is counted
+    - `iw`: "inner word", leading or trailing white space is not included. Wite space between words is counted.
+    - `aw`: "a word", leading or trailing white space is included, but not counted.
 - 要利用 operator 的話跟 operator-motion 很像是把 operator 放在前面、text object 放在後面、中間可以放 count
 
 
 ## Reference
-- [Neovim document - Making small changes](https://neovim.io/doc/user/usr_04.html) 
-- [Neovim document - Motions](https://neovim.io/doc/user/motion.html) 
+- [Usr_04 - Neovim docs](https://neovim.io/doc/user/usr_04.html) 
+- [Motions - Neovim docs](https://neovim.io/doc/user/motion.html) 
 

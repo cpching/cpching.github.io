@@ -9,18 +9,17 @@ This tutorial is written to help you configure Neovim using Lua
 - [More reasons](https://teukka.tech/luanvim.html) 
 
 ## Begining
-- 在安裝完 Neovim 後進入 Neovim 預設的 config 檔案路徑進行設定
+- 在安裝完 Neovim 後進入 Neovim 預設的 config 檔案路徑進行設定，後面所有的設定都是發生在這個檔案路徑底下
     - Linux、BSD、macOS 在 `~/.config/nvim/`
         ``` bash
         cd ~/.config/nvim/
         ```
     - Windows 在 `~/AppData/Local/nvim/`
-        ``` psh
+        ``` powershell
         cd ~/AppData/Local/nvim/
         ```
-- 後面所有的設定都是發生在這個檔案路徑底下
 - 如果看完這一篇 `Neovim Configuration with Lua` 可以獲得利用 Lua 設定 key mappings 跟 options 的能力
-- 如果看完整個 Neovim tutorial 包含 plugins 設定可以獲得長得像這張圖。（最下面那一行是 tmux status bar）
+- 如果看完整個 Neovim tutorial 包含 plugins 設定可以獲得長得像這張圖的 Neovim。（最下面那一行是 tmux status bar）
     ![Neovim](./images/nvim.png)
 
 ## Directory Structure

@@ -22,5 +22,3 @@ sidebar_position: 1
     - [Telescope](./Neovim/Plugins/telescope.md) ✗
 
 
-Treesitter treesitter a b
-
