@@ -3,7 +3,7 @@ slug: first-blog-post
 title: First Blog Post
 ---
 
-在 2024-06-18 那一天決定要好好建立和維護自己的網頁。寫些 Neovim 教學和和 side projects。
+在 2024-06-18 那一天決定要好好建立和維護自己的網頁。寫些 Neovim 教學和 side projects。
 
 <!-- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/DnOl_qPGPTM/0.jpg)](https://www.youtube.com/watch?v=DnOl_qPGPTM) -->
 
