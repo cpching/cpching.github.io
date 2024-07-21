@@ -8,8 +8,8 @@ Essential Vi tips without using any plugins
 
 ## General
 - 如果覺得什麼事情很冗就去看 vi 能不能解決
-- 熟悉 Vi 原生功能
-- 幫助快速移動的 [Motions](./basic-ways-to-change-text-in-vi#motions) 
+- 熟悉 Vi 原生功能（例如 Motions）
+- 幫助快速移動的 [Motions](./basic-ways-to-change-text-in-vi#motions) （真的很讚，我大學開始用 vi 但研究所學會用 Motions 後我才真的感受到 vi 的強大）
 - 搜尋時加入 `\c` 字元可以忽略後面字串的大小寫
 - `V` （大寫）可以進入 VISUAL LINE mode
 - `Control+V` 可以進入 VISUAL BLOCK mode

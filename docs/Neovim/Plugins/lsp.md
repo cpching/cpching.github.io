@@ -30,7 +30,8 @@ LSP 的全名為 Language Server Protocol，如名所述，它定義了 Language
     ```
 - 安裝後再次進入 Neovim 就可以透過`:Mason` 指令進入 Mason console 查看 Mason 所提供的 servers 和目前的狀態。
     ![mason](../images/mason.png)
-- 透過 `:MasonInstall <server_name>` 安裝 Mason 所提供的 servers 
+    - 可以透過移動 cursor 至想安裝的 server 上按下大寫 `I` 安裝該 server
+- 除了透過在 Mason 中透過大寫 `I` 安裝 server 外，也可以透過 `:MasonInstall <server_name>` 安裝 Mason 所提供的 servers 
     - 這裡 `<server_name>` 會是 Mason console 列表中第一個名字
     - e.g. `:MasonInstall typescript-language-server`
 ### mason-lspconfig

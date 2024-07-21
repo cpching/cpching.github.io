@@ -42,6 +42,7 @@ sidebar_position: 4
 - `:wq` 後再進入 Neovim，使用指令 `:Lazy` 就可以看到 Lazy 的介面，代表 Lazy 可以成功載入，接著就是安裝和設定需要的 plugins
 
 ## Installation of Plugins
+- 如果沒有需要特別設定 plugin 就只需要新增下面那段 code 到 `lua/plugins/` 的隨便一個（名字可以自己取）檔案下，接著存檔退出再次進入 Neovim 後 `:Lazy` 進入 Lazy 畫面，按下大寫 `I` 就可以安裝該 plugin
 - Add different configuration files (*.lua) to `lua/plugins/`
 - The shortest spec for installing a plugin
     ``` lua
@@ -50,8 +51,11 @@ sidebar_position: 4
         '<plugin-short-url>'
     }
     ```
-- 如果沒有需要特別設定 plugin 就只需要新增上面的那段 code 到 `lua/plugins/` 的隨便一個（名字可以自己取）檔案下，接著存檔退出再次進入 Neovim 後 `:Lazy` 進入 Lazy 畫面，按下大寫 `I` 就可以安裝該 plugin
 
-## configuration of Plugins
-- 
+## Configuration of Plugins
+在設定 plugin 的過程中最常需要修改的就是 [setup](https://lazy.folke.io/spec#spec-setup) 的部分，特別是 `opts` 和 `config`。
+
+
+# Reference
+- [Plugin Spec](https://lazy.folke.io/spec) 
 
