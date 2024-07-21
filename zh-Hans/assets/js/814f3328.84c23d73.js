@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u4ee4\u4eba\u6109\u5feb\u7684\u9762\u8a66\u9080\u7d04","permalink":"/zh-Hans/blog/2024/07/04/interview-invitation","unlisted":false},{"title":"First Blog Post","permalink":"/zh-Hans/blog/first-blog-post","unlisted":false}]}')}}]);

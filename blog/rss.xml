@@ -4,18 +4,10 @@
         <title>My Site Blog</title>
         <link>https://cpching.github.io/blog</link>
         <description>My Site Blog</description>
-        <lastBuildDate>Thu, 04 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Jun 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
-        <item>
-            <title><![CDATA[令人愉快的面試邀約]]></title>
-            <link>https://cpching.github.io/blog/2024/07/04/interview-invitation</link>
-            <guid>https://cpching.github.io/blog/2024/07/04/interview-invitation</guid>
-            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[在丟了一些履歷沒收到回覆時有些萎靡，今天收到兩份面試邀約，十分愉快。知道不是自己不好，是時機跟機緣。就算都沒收到我希望我記得還是會有人愛我、相信我，繼續加油。]]></description>
-            <content:encoded><![CDATA[<p>在丟了一些履歷沒收到回覆時有些萎靡，今天收到兩份面試邀約，十分愉快。知道不是自己不好，是時機跟機緣。就算都沒收到我希望我記得還是會有人愛我、相信我，繼續加油。</p>]]></content:encoded>
-        </item>
         <item>
             <title><![CDATA[First Blog Post]]></title>
             <link>https://cpching.github.io/blog/first-blog-post</link>
