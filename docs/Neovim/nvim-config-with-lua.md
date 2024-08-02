@@ -86,13 +86,13 @@ vim.cmd('colorscheme ' .. settings.colorscheme)
 
 ### `keymap` Function in Lua
 - Neovim's API [`vim.api.nvim_set_keymap`](https://neovim.io/doc/user/api.html#nvim_set_keymap()) sets a global mapping for the given mode
-- Function interface: `nvim_set_keymap( {mode}, {lhs}, {rhs}, {opts})`
-    - `mode`: Mode short-name (e.g. n, i, v, …) 要綁定的 mode
+- Function interface: `nvim_set_keymap({mode}, {lhs}, {rhs}, {opts})`
+    - `mode`: Mode short-name (e.g. `n`, `i`, `v`, …) 要綁定的 mode
     - `lhs`: Left-hand-side of the mapping. 要把什麼 key 綁定功能（之後使用的快捷鍵）
     - `rhs`: Right-hand-side f the mapping. 要綁定什麼功能
     - `opts`: Optional parameters map. 綁定設定，通常會設定 `noremap` 和 `silent`（我沒找到完整的文件 list）
-        - `noremap` 為 true 是指這個 mapping 是 **non-recursive** 的，它會直接 map 到把 `rhs` 當作 literal string of commands 執行，不會使 `rhs` 其它 mapping 後的結果
-        - `silent` 為 true 就是不會在 command line 顯示你使用的 `rhs` ，亦即能在使用快捷鍵時不受干擾
+        - `noremap` 為 true 是指這個 mapping 是 **non-recursive**，它會直接 map 到把 `rhs` 當作 literal string of commands 執行，不會使用 `rhs` mapping 後的結果
+        - `silent` 為 true 就是不會在 command line 顯示你使用的 `rhs` ，意即能在使用快捷鍵時不受干擾
 
 ### Code in `keymaps.lua`
 - Assign a variable `keymap` to hold a reference to the function
@@ -105,7 +105,7 @@ vim.cmd('colorscheme ' .. settings.colorscheme)
     ```
 - Call `keymap` function
     ``` lua
-    keymap( {mode}, {lhs}, {rhs}, opts)
+    keymap({mode}, {lhs}, {rhs}, opts)
     ```
     - Example: `keymap("n", "<C-L>", ":update", opts)` means "using `Ctrl+l` to save file in NORMAL mode"
 
@@ -174,9 +174,8 @@ vim.api.nvim_set_keymap("n", "<C-\\>", "<CMD>lua Close_buffer_or_window()<CR>", 
             tabstop = 4,
             hidden = false,
             mouse="i",
-            statuscolumn = "%s%2r  %2l ", -- ▎
+            statuscolumn = "%s%2r  %2l ",
             signcolumn = "yes"
-        }
         ```
 - Iterate the `options` table to set options
     ``` lua
