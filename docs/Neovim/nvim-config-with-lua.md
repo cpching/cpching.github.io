@@ -8,7 +8,7 @@ This tutorial is written to help you configure Neovim using Lua
 - Neovim has an embedded lua runtime 
 - [More reasons](https://teukka.tech/luanvim.html) 
 
-## Begining
+## Beginning
 - 在安裝完 Neovim 後進入 Neovim 預設的 config 檔案路徑進行設定，後面所有的設定都是發生在這個檔案路徑底下
     - Linux、BSD、macOS 在 `~/.config/nvim/`
         ``` bash
@@ -23,7 +23,7 @@ This tutorial is written to help you configure Neovim using Lua
     ![Neovim](./images/nvim.png)
 
 ## Directory Structure
-使用 Lua 設定 Neovim 時，要可以正確載入 config 檔案，目錄結構會長得像下面的範例
+使用 Lua 設定 Neovim 時，要可以正確載入 config 檔案，目錄結構會長得類似於下面的範例
 ``` bash
 ~/.config/nvim # [ or ~/AppData/Local/nvim ]
 |-- init.lua # [or init.vim (https://neovim.io/doc/user/lua-guide.html#lua-guide-config)]
@@ -35,9 +35,10 @@ This tutorial is written to help you configure Neovim using Lua
         |-- plugin_a.lua
         |-- plugin_b.lua
 ```
--  `init.lua` 或 `init.vim` 在 config 檔案路徑下，這個 `init` 檔案是設定檔的載入點
-    - Neovim 支援在 `init.lua` 或 `init.vim` 使用 Lua 或 Vimscript
--  `lua/` 資料夾下放置 Lua modules
+- 在 config 檔案路徑下通常會有兩個檔案：
+    -  `init.lua` 或 `init.vim`。這個 `init` 檔案是設定檔的載入點
+        - Neovim 支援在 `init.lua` 或 `init.vim` 使用 Lua 或 Vimscript
+    -  `lua/` 資料夾下放置 Lua modules
 ## Code in `init.lua` or `init.vim`
 在 `init.lua` 或 `init.vim` 中利用 `require("<lua_module>")` 載入 `lua/` 下的 Lua modules。
  在下面範例中 `options`、`keymaps`、`plugin-manager`、`settings` 都是 `lua/` 下後綴為 `.lua` 的 Lua 檔案
@@ -63,17 +64,17 @@ vim.cmd('colorscheme ' .. settings.colorscheme)
 
     > Place Lua files in the `lua/` directory in `‘runtimepath’` and load them with require
 - Lua modules 可以透過不同種的寫法載入
-    - Load `module_a.lua` (inside the `lua/` folder)
+    - Load `lua/module_a.lua`
         ``` lua
         require("module_a")
         ```
-    - Load `plugins/plugin_a.lua` (inside the `lua/` folder)
+    - Load `lua/plugins/plugin_a.lua`
         ``` lua
         require('plugins/plugin_a')
         -- or
         require('plugins.plugin_a')
         ```
-    - Load `plugins/init.lua` (inside the `lua/` folder)
+    - Load `lua/plugins/init.lua`
         ```lua
         require('plugins')
         ```
@@ -91,7 +92,7 @@ vim.cmd('colorscheme ' .. settings.colorscheme)
     - `lhs`: Left-hand-side of the mapping. 要把什麼 key 綁定功能（之後使用的快捷鍵）
     - `rhs`: Right-hand-side f the mapping. 要綁定什麼功能
     - `opts`: Optional parameters map. 綁定設定，通常會設定 `noremap` 和 `silent`（我沒找到完整的文件 list）
-        - `noremap` 為 true 是指這個 mapping 是 **non-recursive**，它會直接 map 到把 `rhs` 當作 literal string of commands 執行，不會使用 `rhs` mapping 後的結果
+        - `noremap` 為 true 是指這個 mapping 是 **non-recursive**，它會直接 map 到`rhs` 上，把 `rhs` 當作 literal string of commands 執行，而不會使用 `rhs` mapping 後的結果
         - `silent` 為 true 就是不會在 command line 顯示你使用的 `rhs` ，意即能在使用快捷鍵時不受干擾
 
 ### Code in `keymaps.lua`
@@ -116,7 +117,7 @@ keymap("n", "<M-j>", ":m .+1<CR>==", opts) -- Move text down
 keymap("n", "<M-k>", ":m .-2<CR>==", opts) -- Move text up
 ```
 #### Return to NORMAL Mode Quickly
-- 我無法割捨的 keymap
+- 難以無法割捨的 keymap
 ``` lua
 keymap("i", "jj", "<ESC>", opts)
 ```
@@ -139,7 +140,7 @@ end
 -- Map a key to call the function to close buffer or window
 vim.api.nvim_set_keymap("n", "<C-\\>", "<CMD>lua Close_buffer_or_window()<CR>", { noremap = true, silent = true })
 ```
-- 利用檢查是否能跳到下一個 buffer 判斷要關閉 buffer 還是關閉整個 window
+- 先跳到下一個 buffer 再利用檢查是否能刪除前一個 buffer 判斷要關閉 buffer 還是關閉整個 window
 
 ## Options
 - You can customize various options and settings for Neovim.

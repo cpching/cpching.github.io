@@ -55,6 +55,44 @@ sidebar_position: 4
 ## Configuration of Plugins
 在設定 plugin 的過程中最常需要修改的就是 [setup](https://lazy.folke.io/spec#spec-setup) 的部分，特別是 `opts` 和 `config`。
 
+這兩個都是能改變 plugin 使用過程的設定。每個 plugin 會自己定義自己可以客製化的地方，`opts` 是用來設定可以直接通過值設定的 options 而 `config` 中會寫入要在 plugin 被載入前執行的邏輯。可以客製化的設定通常在 plugin 的 document 中可以找到。
+
+例如 [package manager - Mason](https://github.com/williamboman/mason.nvim) 的 configuration 可以透過 `opts` 改變介面呈現和當中的 icons。
+    ``` lua
+    return 
+    {
+        "williamboman/mason.nvim",
+        enabled = true,
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗",
+                },
+                border = "rounded",
+            },
+        }
+    }
+    ```
+
+這兩個設定也可以同時存在，`opts` 可以做為 `config` 的第二個 argument 傳入
+    ``` lua
+    return 
+    {
+        '<plugin-short-url>',
+        opts = {
+            ...
+        }
+        config = function(_, opts)
+            ...
+        end
+    }
+    ```
+
+Lazy 官方建議可以用 `opts` 搞定就不要使用 `config` 設定 
+> Always use opts instead of config when possible. config is almost never needed.
+
 
 # Reference
 - [Plugin Spec](https://lazy.folke.io/spec) 

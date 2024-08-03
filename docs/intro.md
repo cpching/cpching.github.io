@@ -9,7 +9,7 @@ sidebar_position: 1
 - [Neovim](./Neovim) ◌
   - [Useful Vi Tips](./Neovim/useful-vi-tips.md) ✓
   - [Basic Ways to Change Text in Vi](./Neovim/basic-ways-to-change-text-in-vi) ✓
-  - [Neovim Configuration with Lua](./Neovim/nvim-config-with-lua.md) ◌
+  - [Neovim Configuration with Lua](./Neovim/nvim-config-with-lua.md) ✓
   - [Plugin Manager - Lazy](./Neovim/plugin-manager-lazy.md) ◌
   - Plugin Configuration ◌
     - [Treesitter](./Neovim/Plugins/treesitter.md) ✗
