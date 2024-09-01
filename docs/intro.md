@@ -14,7 +14,7 @@ sidebar_position: 1
   - Plugin Configuration ◌
     - [Treesitter](./Neovim/Plugins/treesitter.md) ✗
     - [File Explorer Tree](./Neovim/Plugins/file-exploer-tree.md) ✗
-    - [Package Manager: Mason](./Neovim/Plugins/package-manager.md) ✓
+    - [Package Manager: Mason](./Neovim/Plugins/package-manager-mason.md) ✓
     - [LSP](./Neovim/Plugins/lsp.md) ✓
     - [Linting](./Neovim/Plugins/linting.md) ✗
     - [Formatting](./Neovim/Plugins/formatting.md) ✗
