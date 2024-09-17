@@ -8,12 +8,12 @@ LSP 的全名為 Language Server Protocol，如名所述，它定義了 Language
 ## LSP Servers Management: mason-lspconfig
 mason-lspconfig 用來橋接 [Mason](./package-manager-mason.md) 和 Neovim。它可以用來檢查所需的 LSP servers（Mason 有提供的）是否安裝了，也可以設定成如果還沒就會幫使用者自動透過 Mason 下載安裝。
 ### Installation and Configuration
-- 在 lua/plugins/ 下新增一個 lsp.lua 檔案，在該檔案中新增一個 `language_servers` list 和 plugin 的設定內容，儲存退出後再進入 Neovim 並透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
-    ```
+- 在 `lua/plugins/` 下新增一個 `lsp.lua` 檔案，在該檔案中新增一個 `language_servers` list 和 plugin 的設定內容，儲存退出後再進入 Neovim 並透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
+    ``` lua
     language_servers = {
         <server_name_1>, -- e.g. "lua_ls"
         <server_name_2>, -- e.g. "tsserver"
-        ...
+        -- ...
     }
     return
     {
