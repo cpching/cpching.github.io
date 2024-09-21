@@ -5,10 +5,10 @@ sidebar_position: 4
 # LSP
 LSP 的全名為 Language Server Protocol，如名所述，它定義了 Language Clients 與 Language Servers 對接的方法。Language Servers 提供了即時的語法分析，當安裝了某個語言的 Language Server 後不同的 Language Clients （如 Neovim、VSCode 等編輯器）就可以與該 Language Server 溝通，呈現編輯時的語法檢查、程式碼補齊等功能。Neovim 中有許多與 LSP 相關的 Plugins 可以幫助使用者管理 LSP Servers 與設定 LSP Clients。
 
-## LSP Servers Management: mason-lspconfig
+## LSP Servers Management: [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 mason-lspconfig 用來橋接 [Mason](./package-manager-mason.md) 和 Neovim。它可以用來檢查所需的 LSP servers（Mason 有提供的）是否安裝了，也可以設定成如果還沒就會幫使用者自動透過 Mason 下載安裝。
 ### Installation and Configuration
-- 在 `lua/plugins/` 下新增一個 `lsp.lua` 檔案，在該檔案中新增一個 `language_servers` list 和 plugin 的設定內容，儲存退出後再進入 Neovim 並透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
+- 在 `lua/plugins/` 下新增一個 `lsp.lua` 檔案，在該檔案中新增一個 `language_servers` list 和 plugin 的設定內容，儲存後透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
     ``` lua
     language_servers = {
         <server_name_1>, -- e.g. "lua_ls"
@@ -29,16 +29,16 @@ mason-lspconfig 用來橋接 [Mason](./package-manager-mason.md) 和 Neovim。�
         },
     }
     ```
-- 退出後再進入 Neovim 就會開始自動安裝 `language_servers` 中寫的 LSP Servers。
+- 儲存退出後再進入 Neovim 就會開始自動安裝 `language_servers` 中寫的 LSP Servers。
 - Note: 利用 `:MasonInstall <server_name>` 的 `<server_name>` 跟寫在 `language_servers` 中的 `<server_name>` 可能會不同。
     - e.g. 要利用 mason-lspconfig 自動安裝 typescript-language-server 的話，`language_servers` 中要寫入 `"tsserver"` 而非 `"typescript-language-server"`
 
 
-## LSP Client Management: nvim-lspconfig 
+## LSP Client Management: [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 `nvim-lspconfig` 提供 LSP Clients 的客製化選項，例如是否要利用浮動視窗呈現訊息、警告和錯誤的符號該是什麼、每個 language servers 使用時有什麼設定等。我個人認為 nvim-lspconfig 是 Neovim 中設定起來前三繁雜的 plugin，不過理解之後其它的 plugin 設定就顯得容易多了。
 
 ### Installation and Configuration
-- 繼續在 `lua/plugins/lsp.lua` 檔案中 mason-lspconfig 設定後新增 nvim-lspconfig 的設定，儲存退出後再進入 Neovim 並透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
+- 繼續在 `lua/plugins/lsp.lua` 檔案中 mason-lspconfig 設定後新增 nvim-lspconfig 的設定，儲存後透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
     ``` lua
     return 
     {
