@@ -59,7 +59,7 @@ sidebar_position: 2
 ### [Triggering deployment with GitHub Actions](https://docusaurus.io/docs/deployment#triggering-deployment-with-github-actions) 
 - 想著「如果可以不用每次手動部署，可以做版控順便部署。」的時候 GitHub Actions 就出現了
 - GitHub 就是讓人可以設定 trigger 條件和要 trigger 的指令
-    - 本文設定的 trigger 條件是「push 到 GitHub repository 上的 main branch」，trigger 後執行「利用`gh-pages` branch 進行部署」指令
+    - 本文設定的 trigger 條件是「push 到 GitHub repository 上的 main branch」，trigger 後執行「利用 `gh-pages` branch 進行部署」指令
         > When a pull request is merged to the main branch or someone pushes to the main branch directly, it will be built and deployed to GitHub Pages. This job will be called deploy.
 
         > The deployment repo is a remote repository, different from the source. Instructions for this scenario assume publishing source is the gh-pages branch.
@@ -81,7 +81,7 @@ sidebar_position: 2
     > Create your documentation workflow file in .github/workflows/. In this example, it's deploy.yml.
     ``` yml
     # Make sure to replace `<email>` and `<username>` with GitHub email and username
-    # This file use npm
+    # This file uses npm
 
     name: Deploy to GitHub Pages
 
