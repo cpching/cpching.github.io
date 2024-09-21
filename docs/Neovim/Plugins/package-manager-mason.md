@@ -6,8 +6,10 @@ sidebar_position: 3
 Neovim 可以利用外部的 server 完成像是自動補齊、語法檢查等功能，而 Mason 所提供的就是透過單一個 interface 管理這些外部的 server。
 Mason 讓使用者能在 Neovim 中管理 LSP server、DAP servers、linters 和 formatter 的安裝、更新和刪除。
 
-## Installation and Configuration
-- 在 `lua/plugins/` 下新增一個 `mason.lua` 檔案，當中新增下列內容並儲存退出後再進入 Neovim 並透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
+## [mason](https://github.com/williamboman/mason.nvim)
+Mason 提供了 interface 管理外部的 servers 而要使用這些 servers 會需要安裝、設定另外的 plugin，這一節的內容是 mason 的安裝和基礎的設定。
+### Installation and Configuration
+- 在 `lua/plugins/` 下新增一個 `mason.lua` 檔案，當中新增下列內容儲存後透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
     ``` lua
     return
     {
