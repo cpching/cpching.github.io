@@ -5,7 +5,7 @@ sidebar_position: 1
 # Treesitter
 Neovim 把 [tree-sitter](https://tree-sitter.github.io/tree-sitter/) 整合進來，幫助 Neovim 動態 parse 編輯內容，在編輯過程中建立內容的 syntax tree，讓使用者可以對 syntax tree 上的 node 進行操作，讓編輯更流暢。Neovim 原生包含了 `C`、`Lua`、` Markdown` 等語言的 parser，而 `nvim-treesitter` 這個套件可以用來安裝其它語言的 parser 並對 tree-sitter 使用進行設定。而 `nvim-treesitter-textobjects` 這個套件結合了 vi 中 [text objects](../basic-ways-to-change-text-in-vi#text-objects) 的概念，可以對 parse 出的 nodes 進行更多的操作。
 
-## nvim-treesitter
+## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - 在 `lua/plugins/` 新增一個叫 `nvim-treesitter.lua` 的檔案並在檔案中新增一個 `language_parsers` 的 list 和 plugin 的設定。儲存後並透過 `:Lazy` 進入 Lazy console 進行 plugin 安裝。
     ``` lua
     local language_parsers = {
@@ -40,15 +40,15 @@ Neovim 把 [tree-sitter](https://tree-sitter.github.io/tree-sitter/) 整合進�
         - `init_selection` 是在設定 NORMAL mode 中開始選擇 node 的快捷鍵，預設是 `gnn`，按下後會進入 VISUAL mode。
         - `node_incremental` 是在設定 VISUAL mode 中擴增 node 至上一層有 name 的 parent 的快捷鍵（named parent），預設是 `grn`。Treesitter 中有 named node 和 anonymous node（像是 string literals 就是 anonymous nodes），可以觀察 syntax tree 發現 named node 會有一個 `name` attribute。
         - `scope_incremental` 是在設定 VISUAL mode 中擴增 node 的快捷鍵至自行定義在 `locals.scm` 的上層 scope，預設是 `grc`。
-        - `scope_incremental` 是在設定 VISUAL mode 中回到前一次選擇的 scope，預設是 `grm`。
+        - `node_decremental` 是在設定 VISUAL mode 中回到前一次選擇的 scope，預設是 `grm`。
 - 接著可以透過 `:InspectTree` 查看 parser 所建立的 syntax tree 的樣子，樹中的 nodes 和 code 的內容會相互呼應。
 ![InspectTree](../images/InspectTree.png) 
 
-## nvim-treesitter-textobjects
+## [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 要讓 tree-sitter 的 node 可以在 nvim 中像 textobjects 一樣被操作，需要另一個套件 `nvim-treesitter-textobjects`，相關主要的設定是寫在 `nvim-treesitter` 下。除了讓 node 像 built-in 的 textobjects 可以搭配 operators 操作外，`nvim-treesitter-textobjects` 也可以交換兩個 node 和快速移動到前一個或後一個 node 上。
     
 - `nvim-treesitter-textobjects` 提供了 31 個 [built-in textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects?tab=readme-ov-file#built-in-textobjects)（e.g. class.inner、function.outer）。這些 text objects 可以透過設定 config 對它們進行操作。
-- 在 `nvim-treesitter.lua` 中 `opts` 前新增一個 `dependencies`，並在 `opts` 內新增一個 `textobjects`。（這塊是用 [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects?tab=readme-ov-file#nvim-treesitter-textobjects) 中的範例設定）
+- 在 `nvim-treesitter.lua` 中 `opts` 前新增一個 dependencies`，並在 `opts` 內新增一個 `textobjects`。（這塊是用 [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects?tab=readme-ov-file#nvim-treesitter-textobjects) 中的範例設定）
     ``` lua
         return {
             "nvim-treesitter/nvim-treesitter",
